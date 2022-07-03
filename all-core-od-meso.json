@@ -1,0 +1,38 @@
+{
+  "algorithms": {
+    "no-preemption" : {
+      "begin": [21600],
+      "end": [25300]      
+    }   
+  },
+  "locations": {
+      "od-meso" : {
+        "evs": [ "vehev1" ]
+      }            
+  },
+  "prefix": ["staticdynamic"],
+  "scenarios": [1],
+  "machines": {
+    "ranger01" : {
+      "seeds": [],
+      "tasks" : 1,
+      "threadnum" : 1,
+      "maxtasks": 4,
+      "cores": [4,6,8,10]
+    },
+    "ranger03" : {
+      "seeds": [],
+      "tasks" : 1,
+      "threadnum" : 1,
+      "maxtasks": 5,
+      "cores": [4,6,8,10,12]
+    },
+    "jau" : {
+      "seeds": [11718,10105,12811,16993,20276],
+      "tasks" : 1,
+      "threadnum" : 1,
+      "maxtasks": 13,
+      "cores": [4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+    }    
+  }
+}

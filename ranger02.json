@@ -1,0 +1,50 @@
+{
+  "algorithms": {
+    "no-preemption" : {
+      "begin": [25200],
+      "end": [25202]      
+    },
+    "allgreen" : {
+      "begin": [25200],
+      "end": [25202]      
+    },    
+    "tpn4" : {
+      "always": ["False"],
+      "prt": [0.50],
+      "clear": ["False"],
+      "begin": [25200],
+      "end": [25202]
+    },         
+    "kapusta2" : {
+      "begin": [25200],
+      "end": [25202]      
+    },
+    "fuzzy" : {
+      "el" : ["high"],
+      "begin": [25200],
+      "end": [25202]          
+    },
+    "rfid" : {
+      "distancedetection" : ["100"],
+      "ncycles" : ["5"],
+      "begin": [25200],
+      "end": [25202]          
+    }               
+  },
+  "locations": {
+    "augmented-downtown" : {
+      "evs": [ "vehev2" ]
+    }               
+  },
+  "prefix": ["staticdynamic"],
+  "scenarios": [1],
+  "machines": {
+    "jau" : {
+      "seeds": [11718,10105,12811,16993,20276,2094,21907,22760,30366,30616,31737,24847,32668,6479,17651,27548,27226,6325,22570,22737,15239,16250,4771,14368,25029],
+      "tasks" : 1,
+      "threadnum" : 1,
+      "maxtasks": 30,
+      "cores": [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    }    
+  }
+}

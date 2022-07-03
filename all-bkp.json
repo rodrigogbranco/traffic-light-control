@@ -1,0 +1,35 @@
+{
+  "algorithms": {
+    "no-preemption" : [],
+    "petri" : {
+      "umt" : ["True"],
+      "prt" : ["0.00", "0.10", "0.20"]
+    },
+    "djahel" : {
+      "el" : ["low", "medium", "high"]
+    },
+    "rfid": {
+      "distancedetection" : [25, 50, 100],
+      "ncycles" : [1, 3, 5]
+    },    
+    "smartcity-centered" : {
+      "speedfactor" : [1, 2, 3, 5, 10, 20],
+      "distancefactor" : [1, 2, 3, 5, 10],
+      "thresholdfactor": [1, 2, 3],
+      "sync" : [ "False", "True" ]
+    }    
+  },
+  "locations": {
+      "sp" : {
+        "evs": [ "veh7058", "veh5393", "veh7377", "veh5894", "veh11651" ]
+      }
+      ,
+      "ny": {
+        "evs": ["veh4216", "veh4046", "veh4028", "veh2735", "veh4856"]
+      }
+  },
+  "prefix": ["dynamic", "static"],
+  "scenarios": [1, 2, 3, 4, 5],
+  "seeds": [12811, 30366, 10105, 31737, 21907, 16993, 11718, 24847, 32668, 6479, 17651, 27548, 27226, 6325, 22570,
+    22737, 15239, 16250, 4771, 14368, 20276, 25029, 32556, 10280, 227, 27422, 12837, 7006, 20156, 18685]
+}

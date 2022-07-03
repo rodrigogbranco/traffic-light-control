@@ -1,0 +1,11 @@
+.sonarlint
+*.pyc
+*.log
+tripinfo*.xml
+oldresults/**
+newresults/**
+
+__pycache__/
+*.pyc
+
+.vscode/**

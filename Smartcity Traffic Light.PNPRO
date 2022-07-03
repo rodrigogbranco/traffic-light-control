@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This project file has been saved by the New GreatSPN Editor, v.100 --><project name="Smartcity Traffic Light" version="121">
+  <gspn name="Global Control">
+    <nodes>
+      <place alt-name-fn="LATEX_TEXT" label-y="2.0" marking="1" name="PStart" shown-as="\mathrm{P}_{Start}" x="14.0" y="22.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="2.0" label-y="0.0" name="P0_I0" shown-as="\mathrm{P0}_{1}" x="1.0" y="15.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="2.0" label-y="0.0" name="P0_I1" shown-as="\mathrm{P0}_{2}" x="8.0" y="15.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="2.0" label-y="0.0" name="P0_In" shown-as="\mathrm{P0}_{N}" x="25.0" y="15.0"/>
+      <transition alt-name-fn="LATEX_TEXT" label-x="2.0" label-y="0.5" name="tStart" rotation="1.5707963267948966" shown-as="\mathit{t}_{Start}" type="IMM" x="14.85" y="19.0"/>
+      <transition alt-name-fn="LATEX_TEXT" delay="" label-x="1.0" label-y="1.0" name="t0_I0" nservers-x="0.5" rotation="1.5707963267948966" shown-as="\mathit{t0}\hspace{1pt}_{1}" type="EXP" x="1.55" y="12.0"/>
+      <transition alt-name-fn="LATEX_TEXT" delay="" label-x="1.0000000000000018" label-y="1.0" name="t0_I1" nservers-x="0.5" rotation="1.5707963267948966" shown-as="\mathit{t0}\hspace{1pt}_{2}" type="EXP" x="8.55" y="12.0"/>
+      <transition alt-name-fn="LATEX_TEXT" delay="" label-x="1.0" label-y="1.0" name="t0_In" nservers-x="0.5" rotation="1.5707963267948966" shown-as="\mathit{t0}\hspace{1pt}_{N}" type="EXP" x="25.55" y="12.0"/>
+      <transition alt-name-fn="LATEX_TEXT" name="t5" rotation="3.141592653589793" shown-as="\mathit{t}\hspace{1pt}_{Cancel}" type="IMM" x="14.85" y="3.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="-2.5" label-y="-0.5" name="P6" shown-as="\mathrm{P}_{Cancel}" x="14.0" y="7.0"/>
+      <text-box bold="true" border-color="none" fill-color="none" height="1.0" name="__textBox0" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="2.25" x="13.875" y="12.5">...</text-box>
+      <text-box bold="true" border-color="none" fill-color="none" height="1.0" name="copy___textBox0" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="2.25" x="13.875" y="16.5">...</text-box>
+      <place alt-name-fn="LATEX_TEXT" label-x="2.5" label-y="0.0" name="P0_TLn-1" shown-as="\mathrm{P0}_{N-1}" x="18.0" y="15.0"/>
+      <transition alt-name-fn="LATEX_TEXT" delay="" label-x="1.5" label-y="1.0" name="t0_TLn-1" nservers-x="0.5" rotation="4.71238898038469" shown-as="\mathit{t0}\hspace{1pt}_{N-1}" type="EXP" x="18.55" y="12.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="#ffc0c0" height="9.125" name="__textBox1" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="8.0" x="11.0" y="0.4375">Cancel Block</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="7.75" name="__textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" text-size="SMALL" width="6.25" x="0.25" y="10.125">Intersection \\ Control (\mathrm{I_1})</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="7.75" name="copy___textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" text-size="SMALL" width="6.25" x="6.875" y="10.125">Intersection \\ Control (\mathrm{I_2})</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="7.75" name="copy_copy___textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" text-size="SMALL" width="6.25" x="16.875" y="10.125">Intersection \\ Control (\mathrm{I_{N-1})</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="7.75" name="copy_copy_copy___textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" text-size="SMALL" width="6.25" x="23.875" y="10.125">Intersection \\ Control (\mathrm{I_{N})</text-box>
+    </nodes>
+    <edges>
+      <arc head="tStart" kind="INPUT" tail="PStart"/>
+      <arc head="t0_I0" kind="INPUT" tail="P0_I0"/>
+      <arc head="t0_I1" kind="INPUT" tail="P0_I1"/>
+      <arc head="t0_In" kind="INPUT" tail="P0_In"/>
+      <arc head="P6" kind="OUTPUT" tail="t5"/>
+      <arc head="t0_TLn-1" kind="INPUT" tail="P0_TLn-1"/>
+      <arc head="t0_I0" kind="INHIBITOR" tail="P6">
+        <point x="6.0" y="8.0"/>
+        <point x="6.0" y="13.0"/>
+      </arc>
+      <arc head="t0_In" kind="INHIBITOR" tail="P6">
+        <point x="23.5" y="8.0"/>
+        <point x="23.5" y="13.0"/>
+      </arc>
+      <arc head="t5" kind="INHIBITOR" tail="P6">
+        <point x="17.0" y="6.5"/>
+        <point x="17.0" y="4.0"/>
+      </arc>
+      <arc head="t0_TLn-1" kind="INHIBITOR" tail="P6">
+        <point x="16.5" y="13.0"/>
+      </arc>
+      <arc head="t0_I1" kind="INHIBITOR" tail="P6">
+        <point x="12.0" y="13.0"/>
+      </arc>
+      <arc head="P0_I0" kind="OUTPUT" tail="tStart">
+        <point x="2.0" y="20.0"/>
+      </arc>
+      <arc head="P0_In" kind="OUTPUT" tail="tStart">
+        <point x="26.0" y="20.0"/>
+      </arc>
+      <arc head="P0_I1" kind="OUTPUT" tail="tStart">
+        <point x="14.5" y="19.0"/>
+        <point x="9.0" y="19.0"/>
+      </arc>
+      <arc head="P0_TLn-1" kind="OUTPUT" tail="tStart">
+        <point x="16.0" y="19.0"/>
+        <point x="19.0" y="19.0"/>
+      </arc>
+    </edges>
+  </gspn>
+  <gspn name="TimedPetriNet">
+    <nodes>
+      <transition alt-name-fn="LATEX_TEXT" label-x="1.5" label-y="-1.0" name="tCancel" shown-as="\mathit{t}\hspace{1pt}_{Cancel}" type="IMM" x="31.85" y="8.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="2.0" label-y="0.0" marking="1" name="P0" shown-as="\mathrm{P0}_{i}" x="24.0" y="3.0"/>
+      <place alt-name-fn="LATEX_TEXT" name="P1" shown-as="\mathrm{P1}_{i}" x="8.0" y="3.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="-2.0" label-y="-1.0" name="P2" shown-as="\mathrm{P2}_{i}" x="3.0" y="8.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="2.0" label-y="0.0" name="P3" shown-as="\mathrm{P3}_{i}" x="24.0" y="16.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="2.0" label-y="0.5" name="P4" shown-as="\mathrm{P4}_{i}" x="3.0" y="17.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="1.5" label-y="1.0" name="P5" shown-as="\mathrm{P5}_{i}" x="3.0" y="25.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="2.5" label-y="-1.0" name="PCancel" shown-as="\mathrm{P}_{Cancel}" x="24.0" y="8.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="-2.0" label-y="-1.0" name="P6" shown-as="\mathrm{P6}_{i}" x="31.0" y="23.0"/>
+      <transition alt-name-fn="LATEX_TEXT" label-x="1.0" name="t0" shown-as="\mathit{t0}\hspace{1pt}_{i}" type="IMM" x="16.85" y="3.0"/>
+      <transition alt-name-fn="LATEX_TEXT" label-y="-2.0" name="t1" shown-as="\mathit{t1}\hspace{1pt}_{i}" type="IMM" x="3.85" y="3.0"/>
+      <transition alt-name-fn="LATEX_TEXT" label-x="-1.0" label-y="0.0" name="t2" shown-as="\mathit{t2}\hspace{1pt}_{i}" type="IMM" x="3.85" y="12.0"/>
+      <transition alt-name-fn="LATEX_TEXT" label-x="1.0" label-y="-1.0" name="t3" shown-as="\mathit{t3}\hspace{1pt}_{i}" type="IMM" x="24.85" y="12.0"/>
+      <transition alt-name-fn="LATEX_TEXT" label-x="1.0" label-y="-0.5" name="t4" shown-as="\mathit{t4}\hspace{1pt}_{i}" type="IMM" x="3.85" y="21.0"/>
+      <place alt-name-fn="LATEX_TEXT" label-x="-2.0" label-y="-1.0" name="P7" shown-as="\mathrm{P7}_{i}" x="20.0" y="12.0"/>
+      <transition alt-name-fn="LATEX_TEXT" label-x="-1.0" label-y="1.0" name="t5" shown-as="\mathit{t}\hspace{1pt}_{5_i}" type="IMM" x="20.85" y="23.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="#ffc0c0" height="5.0625" name="__textBox0" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="11.5" x="23.25" y="5.9375">Cancel Block</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="4.34375" name="__textBox1" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="8.75" x="23.625" y="1.15625">Preemption Start</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="6.0" name="__textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="5.75" x="7.125" y="0.5">Preemption
+Trigger</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="3.5" horiz-pos="4" name="__textBox3" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" vert-pos="0" width="14.0" x="1.0" y="7.0">Wait for 
+the EV's crossing or 
+Preemption Cancel</text-box>
+      <text-box alt-name-fn="LATEX_TEXT" bold="true" border-color="#000000" fill-color="none" height="5.5" name="__textBox4" shadow="true" shape="ROUND_RECTANGLE" shown-as="\_\_\hspace{1pt}\mathrm{textBox}_{4}" text-color="#000000" vert-pos="3" width="11.0" x="24.0" y="22.0">Fire \mathit{t2_i} (through \mathrm{P7_i}) \\ if \mathit{t3_i} has not fired yet</text-box>
+      <text-box alt-name-fn="LATEX_TEXT" bold="true" border-color="#000000" fill-color="none" height="4.0" horiz-pos="2" name="__textBox5" shadow="true" shape="ROUND_RECTANGLE" shown-as="\_\_\hspace{1pt}\mathrm{textBox}_{5}" text-color="#000000" vert-pos="0" width="15.0" x="7.5" y="11.0">Ready to finish the \\ preemption for \mathit{I_i}</text-box>
+      <text-box alt-name-fn="LATEX_TEXT" bold="true" border-color="#000000" fill-color="none" height="3.296875" horiz-pos="4" name="__textBox6" shadow="true" shape="ROUND_RECTANGLE" shown-as="\_\_\hspace{1pt}\mathrm{textBox}_{6}" text-color="#000000" width="19.0" x="1.0" y="16.203125">Restore regular operation for \mathrm{I_i}</text-box>
+      <text-box alt-name-fn="LATEX_TEXT" bold="true" border-color="#000000" fill-color="none" height="7.5" horiz-pos="4" name="__textBox7" shadow="true" shape="ROUND_RECTANGLE" shown-as="\_\_\hspace{1pt}\mathrm{textBox}_{7}" text-color="#000000" vert-pos="0" width="8.125" x="23.5" y="11.25">EV has \\ crossed \\ \mathrm{I_i}</text-box>
+      <text-box alt-name-fn="LATEX_TEXT" bold="true" border-color="#000000" fill-color="none" height="4.0" horiz-pos="4" name="__textBox8" shadow="true" shape="ROUND_RECTANGLE" shown-as="\_\_\hspace{1pt}\mathrm{textBox}_{8}" text-color="#000000" vert-pos="0" width="16.0625" x="1.0" y="23.5">Preemption for \mathrm{I_i} \\ has ended.  Wait for \\ other TL Blocks</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="5.0" name="__textBox9" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="8.5" x="14.0" y="1.0">Timed transition</text-box>
+    </nodes>
+    <edges>
+      <arc head="PCancel" kind="OUTPUT" tail="tCancel"/>
+      <arc head="P6" kind="OUTPUT" tail="tCancel"/>
+      <arc head="P1" kind="OUTPUT" tail="t0"/>
+      <arc head="t0" kind="INPUT" tail="P0"/>
+      <arc head="t1" kind="INPUT" tail="P1"/>
+      <arc head="P2" kind="OUTPUT" tail="t1"/>
+      <arc head="t2" kind="INPUT" tail="P2"/>
+      <arc head="P4" kind="OUTPUT" mult-x="0.9830611029791072" mult-y="1.9957652757447768" tail="t2"/>
+      <arc head="P5" kind="OUTPUT" mult-x="0.18666054018428468" mult-y="0.9577736934561898" tail="t4"/>
+      <arc head="P3" kind="OUTPUT" tail="t3"/>
+      <arc head="t3" kind="INHIBITOR" tail="PCancel"/>
+      <arc head="t4" kind="INPUT" tail="P4"/>
+      <arc head="t5" kind="INPUT" tail="P6"/>
+      <arc head="P7" kind="OUTPUT" tail="t5"/>
+      <arc head="t2" kind="INPUT" mult-k="0.50009765625" tail="P7">
+        <point x="19.0" y="13.0"/>
+        <point x="12.123891173056492" y="13.0"/>
+      </arc>
+      <arc head="t5" kind="INHIBITOR" tail="P3"/>
+      <arc head="P7" kind="OUTPUT" tail="t3"/>
+      <arc head="t3" kind="INHIBITOR" mult-x="-1.2653224667548884" mult-y="0.37742026596090383" tail="P3">
+        <point x="26.5" y="15.5"/>
+        <point x="26.5" y="13.5"/>
+      </arc>
+      <arc head="tCancel" kind="INHIBITOR" mult-x="0.5528564453125" mult-y="1.27642822265625" tail="PCancel">
+        <point x="26.5" y="10.5"/>
+        <point x="31.0" y="10.5"/>
+      </arc>
+      <arc head="t0" kind="INHIBITOR" tail="PCancel">
+        <point x="17.0" y="9.0"/>
+      </arc>
+    </edges>
+  </gspn>
+  <measures gspn-name="TimedPetriNet" name="Measures" simplified-UI="false">
+    <assignments/>
+    <mc4cslta/>
+    <formulas>
+      <formula comment="Basic statistics of the toolchain execution." language="STAT"/>
+      <formula comment="All the basic Petri net measures" language="ALL"/>
+      <formula language="TRG"/>
+      <formula language="RG"/>
+    </formulas>
+  </measures>
+</project>

@@ -1,0 +1,7 @@
+.sonarlint
+.gitignore
+build.sh
+Dockerfile
+run.sh
+*.pyc
+*.log

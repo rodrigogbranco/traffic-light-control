@@ -1,0 +1,59 @@
+digraph RRG {
+  rankdir=TB;
+  ratio=compress;
+  node[shape=ellipse, fontname=Arial];
+  init[shape=none, label=<>];
+  init -> V1 [len=0.5, color=navy];
+  M1 [ label=< <font color="#DDAAAA">M1:</font> <br/>P0, PCancel, P7<br/><font color="#EE0000">DEAD</font>>, penwidth=1 ];
+  M2 [ label=< <font color="#DDAAAA">M2:</font> <br/>P0, P3, PCancel, P6, P7<br/><font color="#EE0000">DEAD</font>>, penwidth=1 ];
+  M3 [ label=< <font color="#DDAAAA">M3:</font> <br/>P5, PCancel<br/><font color="#EE0000">DEAD</font>>, penwidth=1 ];
+  M4 [ label=< <font color="#DDAAAA">M4:</font> <br/>P3, P5, PCancel, P6<br/><font color="#EE0000">DEAD</font>>, penwidth=1 ];
+  V1 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V1:</font> <br/>P0>, penwidth=1 ];
+  V2 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V2:</font> <br/>P0, PCancel, P6>, penwidth=1 ];
+  V3 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V3:</font> <br/>P1>, penwidth=1 ];
+  V4 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V4:</font> <br/>P0, P3, P7>, penwidth=1 ];
+  V5 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V5:</font> <br/>P1, PCancel, P6>, penwidth=1 ];
+  V6 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V6:</font> <br/>P2>, penwidth=1 ];
+  V7 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V7:</font> <br/>P1, P3, P7>, penwidth=1 ];
+  V8 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V8:</font> <br/>P2, PCancel, P6>, penwidth=1 ];
+  V9 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V9:</font> <br/>P1, PCancel, P7>, penwidth=1 ];
+  V10 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V10:</font> <br/>P2, P3, P7>, penwidth=1 ];
+  V11 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V11:</font> <br/>P1, P3, PCancel, P6, P7>, penwidth=1 ];
+  V12 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V12:</font> <br/>P2, PCancel, P7>, penwidth=1 ];
+  V13 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V13:</font> <br/>P2, P3, PCancel, P6, P7>, penwidth=1 ];
+  V14 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V14:</font> <br/>P3, P4>, penwidth=1 ];
+  V15 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V15:</font> <br/>P4, PCancel>, penwidth=1 ];
+  V16 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V16:</font> <br/>P3, P4, PCancel, P6>, penwidth=1 ];
+  V17 [ color=gray50, style=dotted, label=< <font color="#CCCCCC">V17:</font> <br/>P3, P5>, penwidth=1 ];
+
+
+  edge[len=1.5, fontsize=10, fontname=Arial];
+  V1 -> V4 [label=<t3<br/><font face="Courier" color="#6060A0">imm[0.333333]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V1 -> V3 [label=<t0<br/><font face="Courier" color="#6060A0">imm[0.333333]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V1 -> V2 [label=<tCancel<br/><font face="Courier" color="#6060A0">imm[0.333333]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V2 -> M1 [label=<t5<br/><font face="Courier" color="#6060A0">imm[1]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V3 -> V7 [label=<t3<br/><font face="Courier" color="#6060A0">imm[0.333333]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V3 -> V6 [label=<t1<br/><font face="Courier" color="#6060A0">imm[0.333333]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V3 -> V5 [label=<tCancel<br/><font face="Courier" color="#6060A0">imm[0.333333]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V4 -> V7 [label=<t0<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V4 -> M2 [label=<tCancel<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V5 -> V9 [label=<t5<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V5 -> V8 [label=<t1<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V6 -> V10 [label=<t3<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V6 -> V8 [label=<tCancel<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V7 -> V10 [label=<t1<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V7 -> V11 [label=<tCancel<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V8 -> V12 [label=<t5<br/><font face="Courier" color="#6060A0">imm[1]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V9 -> V12 [label=<t1<br/><font face="Courier" color="#6060A0">imm[1]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V10 -> V14 [label=<t2<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V10 -> V13 [label=<tCancel<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V11 -> V13 [label=<t1<br/><font face="Courier" color="#6060A0">imm[1]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V12 -> V15 [label=<t2<br/><font face="Courier" color="#6060A0">imm[1]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V13 -> V16 [label=<t2<br/><font face="Courier" color="#6060A0">imm[1]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V14 -> V17 [label=<t4<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V14 -> V16 [label=<tCancel<br/><font face="Courier" color="#6060A0">imm[0.5]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V15 -> M3 [label=<t4<br/><font face="Courier" color="#6060A0">imm[1]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V16 -> M4 [label=<t4<br/><font face="Courier" color="#6060A0">imm[1]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+  V17 -> M4 [label=<tCancel<br/><font face="Courier" color="#6060A0">imm[1]</font>>, penwidth=1, style=dotted, color=dimgray, arrowhead=vee ];
+
+}

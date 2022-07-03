@@ -1,0 +1,57 @@
+FUNCTION_BLOCK djahel
+  VAR_INPUT
+    avs: REAL;
+    ol: REAL;
+  END_VAR
+
+  VAR_OUTPUT
+    cl: REAL;
+  END_VAR
+
+  FUZZIFY avs
+    TERM low := (0, 1) (20, 1) (35, 0) ;
+    TERM medium := (20, 0) (35, 1) (50, 0) ;
+    TERM high := (35, 0) (50, 1) ;
+  END_FUZZIFY
+
+  FUZZIFY ol
+    TERM min := (0, 1) (0.08, 1) (0.15, 0) ;
+    TERM low := (0.08, 0) (0.15, 1) (0.25, 1) (0.35, 0) ;
+    TERM medium := (0.25, 0) (0.35, 1) (0.5, 1) (0.6, 0);
+    TERM high :=  (0.5, 0) (0.6, 1) (0.7, 1) (0.78, 0) ;
+    TERM critical := (0.7, 0) (0.78, 1) ;
+  END_FUZZIFY
+
+  DEFUZZIFY cl
+    TERM negligible := (0, 0) (0.5, 1) (1, 0) ;
+    TERM low := (1, 0) (1.5, 1) (2, 0) ;
+    TERM medium := (2, 0) (2.5, 1) (3, 0) ;
+    TERM high := (3, 0) (3.5, 1) (4, 0) ;
+    TERM critical := (4, 0) (4.5, 1) (5, 0) ;
+    ACCU:MAX;
+    METHOD: COG;
+  END_DEFUZZIFY
+
+  RULEBLOCK first	
+    RULE 0: IF (ol IS min) AND (avs IS high) THEN (cl IS negligible);
+    RULE 1: IF (ol IS min) AND (avs IS medium) THEN (cl IS negligible);
+    RULE 2: IF (ol IS min) AND (avs IS low) THEN (cl IS low);
+
+    RULE 3: IF (ol IS low) AND (avs IS high) THEN (cl IS negligible);
+    RULE 4: IF (ol IS low) AND (avs IS medium) THEN (cl IS low);
+    RULE 5: IF (ol IS low) AND (avs IS low) THEN (cl IS low);
+
+    RULE 6: IF (ol IS medium) AND (avs IS high) THEN (cl IS low);
+    RULE 7: IF (ol IS medium) AND (avs IS medium) THEN (cl IS medium);
+    RULE 8: IF (ol IS medium) AND (avs IS low) THEN (cl IS medium);
+
+    RULE 9: IF (ol IS high) AND (avs IS high) THEN (cl IS medium);
+    RULE 10: IF (ol IS high) AND (avs IS medium) THEN (cl IS high);
+    RULE 11: IF (ol IS high) AND (avs IS low) THEN (cl IS high);
+
+    RULE 12: IF (ol IS critical) AND (avs IS high) THEN (cl IS high);
+    RULE 13: IF (ol IS critical) AND (avs IS medium) THEN (cl IS critical);
+    RULE 14: IF (ol IS critical) AND (avs IS low) THEN (cl IS critical);
+  END_RULEBLOCK
+
+END_FUNCTION_BLOCK

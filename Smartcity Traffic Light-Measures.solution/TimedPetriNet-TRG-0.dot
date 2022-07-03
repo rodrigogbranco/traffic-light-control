@@ -1,0 +1,14 @@
+digraph RRG {
+  rankdir=TB;
+  ratio=compress;
+  node[shape=ellipse, fontname=Arial];
+  pi0 [ shape=record, color=blue2, label="Initial Probability:|<v0>0.5|<v1>0.5" ];
+  pi0:v0 -> M2 [ len=0.5, color=skyblue4, arrowhead=vee ];
+  pi0:v1 -> M1 [ len=0.5, color=skyblue4, arrowhead=vee ];
+  M1 [ label=< <font color="#DDAAAA">M1:</font> <br/>P0, PCancel, P7<br/><font color="#EE0000">DEAD</font>>, penwidth=1 ];
+  M2 [ label=< <font color="#DDAAAA">M2:</font> <br/>P0, P3, PCancel, P6, P7<br/><font color="#EE0000">DEAD</font>>, penwidth=1 ];
+
+
+  edge[len=1.5, fontsize=10, fontname=Arial];
+
+}

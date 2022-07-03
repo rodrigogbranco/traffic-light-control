@@ -1,0 +1,25 @@
+#!/bin/bash
+
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4856_seed!20276_dd!50.0_nc!1.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh2735_seed!10280_dd!50.0_nc!5.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh2735_seed!20276_dd!100.0_nc!1.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4046_seed!32556_dd!25.0_nc!1.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh2735_seed!17651_dd!100.0_nc!2.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!no-preemption_ev!veh4216_seed!22570.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh2735_seed!17651_dd!25.0_nc!2.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4046_seed!4771_dd!100.0_nc!1.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!djahel_ev!veh4028_seed!12837_wc!start_el!low.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!no-preemption_ev!veh4046_seed!10105.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!djahel_ev!veh4028_seed!32668_wc!start_el!medium.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4216_seed!24847_dd!25.0_nc!5.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4216_seed!25029_dd!50.0_nc!5.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh2735_seed!10280_dd!50.0_nc!3.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4856_seed!27548_dd!25.0_nc!5.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4856_seed!24847_dd!50.0_nc!5.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4046_seed!14368_dd!25.0_nc!5.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!djahel_ev!veh4216_seed!21907_wc!start_el!high.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4216_seed!25029_dd!50.0_nc!2.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4856_seed!30366_dd!100.0_nc!1.json'
+python3 -m json.tool '../docker-sumo-interscity-spres-ev-scenarios/defined/ny/ny-5/results/static/alg!rfid_ev!veh4028_seed!10105_dd!25.0_nc!3.json'
+
+

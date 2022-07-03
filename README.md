@@ -70,9 +70,11 @@ Our version of Fuzzy logic algorithm (based on [this work](https://ieeexplore.ie
 
 * `--el`: allowed values are `low`, `medium` and `high`.
 
+!!!
 ## Running TPN algorithm
 
 TPN is our main algorithm. To use it, it is enough to use `--alg petri`.
+!!!
 
 ## Custom Scenarios
 
